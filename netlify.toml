@@ -1,5 +1,6 @@
 [build]
-  command = "npm run build"
+ base = ""
+  command = "npm install --legacy-peer-deps && npm run build"
   publish = "build"
 
 [[redirects]]
