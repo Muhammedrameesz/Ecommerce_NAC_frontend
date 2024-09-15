@@ -1,0 +1,35 @@
+ [
+    {
+    "id": 1,
+    "name": "Refreshments",
+    "price": 100,
+    "image": "https://media.istockphoto.com/id/1308469124/vector/drink-more-water-healthy-nutrition-motivation-quote-concept-sport-bottle-illustration-on.jpg?s=612x612&w=0&k=20&c=hHKaavLfLGV51kSZLmuGTW1S5SqEA5vDR-Jby9X5UlY=" ,
+    "description": "Your Premier Retail Destination for Refreshments and Snacks At NAC Distributions, we're dedicated to providing you with a curated selection of the finest beverages and snacks, tailored to satisfy your cravings and quench your thirst."
+
+},
+{
+    "id": 2,
+    "name": "Hydration",
+    "price": 200,
+    "image": "https://img.freepik.com/free-photo/silhouette-bottle-with-water-splashes_144627-14026.jpg?t=st=1714558712~exp=1714562312~hmac=535ea93717a1b7dcd40432571d99c8e08053b56de1436f46ddf25405dc973698&w=360",
+    "description": "Elevate Your Hydration Experience with Aquamia and Kenby Water Discover a new level of hydration with our range of premium water brands, including Aquamia and Kenby. Stay refreshed and revitalized throughout the day with the purest and most refreshing water options available.",
+    "typo":"Stay hydrated with us"
+},
+{
+    "id": 3,
+    "name": "Flavors",
+    "price": 300,
+    "image": "https://www.logolynx.com/images/logolynx/05/052393a966c653a75a0028d437aeb5ac.jpeg",
+    "description": "Indulge in Iconic Refreshments and Delectable Snacks. Explore our extensive collection of renowned soft drinks such as Pepsi, 7UP, Miranda, Mountain Dew, Coca-Cola, Sprite, and Maaza, alongside an array of savory treats like Lay's and Bingo chips."
+},
+{
+    "id": 4,
+    "name": "Service",
+    "price": 300,
+    "image": "https://thumbs.dreamstime.com/z/drinking-water-delivery-abstract-concept-vector-illustration-courier-brought-to-office-corporate-business-life-fast-service-284271790.jpg",
+    "description": "Convenience Delivered to Your Doorstep Experience unparalleled convenience with NAC Distributions. Simply browse our online store, place your order with ease, and have your favorite beverages and snacks delivered straight to your doorstep."
+}
+
+
+
+]
