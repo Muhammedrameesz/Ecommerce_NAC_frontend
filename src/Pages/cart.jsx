@@ -23,7 +23,6 @@ import Confetti from "../UI/confette.jsx";
 import useGetUserDetals from "../customHooks/useGetUserDetails.js";
 import { styled } from '@mui/material/styles';
 import Footer from "../Components/footer.jsx"
-import EmptyCart from "../image/black-bg-error.jfif"
 import Payments from "../Components/payments.jsx"
 import { toast } from "react-toastify";
 
@@ -190,9 +189,9 @@ export default function Cart() {
               // marginTop: "0rem",
             }}
           >
-            <img src={EmptyCart} alt="empty" style={{
+            {/* <img src={EmptyCart} alt="empty" style={{
               width:'35%'
-            }}/>
+            }}/> */}
             <h4
               style={{
                 color: "red",
