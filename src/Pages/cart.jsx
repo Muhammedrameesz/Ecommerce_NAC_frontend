@@ -18,7 +18,6 @@ import Form from "../UI/formModal.jsx";
 import AddIcon from "@mui/icons-material/Add";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import useGetCartProduct from "../customHooks/useGetCartProduct";
 import LodingSpinner from "../UI/loadinSpinner.jsx";
 import Confetti from "../UI/confette.jsx";
 import useGetUserDetals from "../customHooks/useGetUserDetails.js";
@@ -52,7 +51,6 @@ const modalStyles = {
   bgcolor: "background.paper",
   border: "2px solid #000",
   borderRadius: "50px",
-  boxShadow: 24,
   textAlign: "center",
   backgroundImage:
     "url(https://img.freepik.com/premium-photo/white-3d-figure-with-bottle-mineral-water-hand-white-background-ai-generated_1034098-11716.jpg?w=740)",
@@ -83,7 +81,6 @@ export default function Cart() {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleClick = () => {
-    console.log("Confetti button clicked");
     setIsVisible(true);
     setTimeout(() => setIsVisible(false), 6000);
   };
