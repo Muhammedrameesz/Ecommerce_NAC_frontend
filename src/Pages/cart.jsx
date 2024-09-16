@@ -25,7 +25,7 @@ import { styled } from '@mui/material/styles';
 import Footer from "../Components/footer.jsx"
 import Payments from "../Components/payments.jsx"
 import { toast } from "react-toastify";
-import { ReactComponent as CartIcon } from "../image/auth protect.svg"
+import { ReactComponent as CartIcon } from "../image/empty cart.svg"
 
 const CustomTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} classes={{ popper: className }} arrow />
@@ -187,10 +187,13 @@ export default function Cart() {
               justifyContent: "center",
               textDecoration: "none",
               gap: "8px",
+              flexDirection:'row'
               // marginTop: "0rem",
             }}
           >
+            <Stack width={'35%'}>
           <CartIcon />
+          </Stack>
             <h4
               style={{
                 color: "red",
