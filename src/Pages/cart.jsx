@@ -25,6 +25,7 @@ import { styled } from '@mui/material/styles';
 import Footer from "../Components/footer.jsx"
 import Payments from "../Components/payments.jsx"
 import { toast } from "react-toastify";
+import NoItem from "../image/empty cart.svg"
 
 const CustomTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} classes={{ popper: className }} arrow />
@@ -189,9 +190,9 @@ export default function Cart() {
               // marginTop: "0rem",
             }}
           >
-            {/* <img src={EmptyCart} alt="empty" style={{
+            <img src={NoItem} alt="cart is empty" style={{
               width:'35%'
-            }}/> */}
+            }}/>
             <h4
               style={{
                 color: "red",

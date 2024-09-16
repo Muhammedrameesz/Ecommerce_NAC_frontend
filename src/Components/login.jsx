@@ -77,7 +77,8 @@ function Login() {
       }
     } catch (error) {
       toast.error("An error occurred during login");
-      reset();
+      setLoading(false);
+
     }
   };
 

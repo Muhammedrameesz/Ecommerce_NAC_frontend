@@ -91,7 +91,7 @@ export default function Signup() {
       } catch (error) {
         console.log(error);
         toast.error("Signup failed");
-        reset();
+        setLoading(false);
       } finally {
         setLoading(false);
       }

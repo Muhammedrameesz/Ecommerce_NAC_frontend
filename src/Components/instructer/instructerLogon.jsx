@@ -47,7 +47,8 @@ export default function InstructerLogin() {
     } catch (error) {
       console.error("Error during login:", error);
       toast.error("An error occurred during login");
-      reset();
+      setLoading(false);
+
     }
   };
 
