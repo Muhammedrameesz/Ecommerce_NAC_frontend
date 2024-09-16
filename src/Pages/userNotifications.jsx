@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Box, Typography, Stack, Button,useTheme, useMediaQuery } from "@mui/material";
-import Error from "../image/transperent.svg";
+import { ReactComponent as CartIcon }  from "../image/transperent.svg";
 import { toast } from "react-toastify";
 import { useCart } from "../store/cartContext";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
@@ -179,10 +179,9 @@ export default function UserNotifications() {
          }}>
             Notifications Not Found..!
           </Typography>
-          <img src={Error} alt="error"  style={{
-            width:'32%',
-            height:'32%'
-          }}/>
+          <Stack width={'35%'}>
+          <CartIcon />
+          </Stack>
         </Stack>
       )}
     </Box>
