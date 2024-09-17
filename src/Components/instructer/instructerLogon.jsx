@@ -7,7 +7,7 @@ import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import useInstructerAuthStore from "../../store/InstructerAuthStore";
 import LockIcon from "@mui/icons-material/Lock";
 import LoadingSpinner from "../../UI/loadinSpinner.jsx";
-import AuthSvg from "../../image/auth protect.svg"; 
+import AuthSvg from "../../image/auth protect.svg";
 
 export default function InstructerLogin() {
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -49,29 +49,29 @@ export default function InstructerLogin() {
 
   return (
     <>
-      <section>
+      <Box >
         <form id="signUpForm" onSubmit={handleSubmit(ondata)}>
           <Box
-            width={{ xs: "90%", md: "70%" }}
-            mt={5}
-            ml={{ xs: "5%", md: "15%" }}
-           
+              width={{ xs: "80%", sm: "80%", md: "80%" }}  
+              mt={{xs:4,md:3,lg:3}}
+              ml={{ xs: "10%", sm: "8%", md: "7%" }}  // Increase margin-left for xs and sm screens
+              mr={{ xs: "5%", sm: "0", md: "2%" }}
           >
             <Stack
-              direction={{ xs: "column", md: "row" }} 
+              direction={{ xs: "column", md: "row" }}
               spacing={2}
               alignItems="center"
               justifyContent="space-around"
             >
               <Stack
                 direction={"column"}
-                maxWidth={{ xs: "100%", md: "50%" }}
+                width={{ xs: "100%", sm: "80%", md: "50%" }} // Set responsive width
                 spacing={2}
                 flex={1}
                 px={3}
                 py={4}
                 sx={{
-                  background: "linear-gradient(.25turn, #0F3443, #5adfa8)",
+                  background: "linear-gradient(.25turn, #93A5CF, #E4EfE9)",
                   borderRadius: "10px",
                   boxShadow:
                     "0 0 10px 0 rgba(0,0,0,0.2), 0 0 4px 0 rgba(0,0,0,0.14), 0 4px 8px 0 rgba(0,0,0,0.12)",
@@ -95,7 +95,7 @@ export default function InstructerLogin() {
                 </Typography>
 
                 <TextField
-                  fullWidth 
+                  fullWidth
                   id="outlined-basic"
                   label="Email"
                   variant="outlined"
@@ -168,12 +168,12 @@ export default function InstructerLogin() {
                 flex={1}
                 p={3}
               >
-                <img src={AuthSvg} alt="Authentication Illustration" width="100%" />
+                <img src={AuthSvg} alt="Authentication Illustration" width="90%" />
               </Box>
             </Stack>
           </Box>
         </form>
-      </section>
+      </Box>
     </>
   );
 }
