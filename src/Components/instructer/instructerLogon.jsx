@@ -54,7 +54,7 @@ export default function InstructerLogin() {
           <Box
               width={{ xs: "80%", sm: "80%", md: "80%" }}  
               mt={{xs:4,md:3,lg:3}}
-              ml={{ xs: "10%", sm: "8%", md: "7%" }}  // Increase margin-left for xs and sm screens
+              ml={{ xs: "10%", sm: "8%", md: "7%" }}  
               mr={{ xs: "5%", sm: "0", md: "2%" }}
           >
             <Stack
@@ -65,13 +65,13 @@ export default function InstructerLogin() {
             >
               <Stack
                 direction={"column"}
-                width={{ xs: "100%", sm: "80%", md: "50%" }} // Set responsive width
+                width={{ xs: "100%", sm: "80%", md: "50%" }} 
                 spacing={2}
                 flex={1}
                 px={3}
                 py={4}
                 sx={{
-                  background: "linear-gradient(.25turn, #93A5CF, #E4EfE9)",
+                  background: "linear-gradient(.25turn, #c8c9c9 , #7ec0c0)",
                   borderRadius: "10px",
                   boxShadow:
                     "0 0 10px 0 rgba(0,0,0,0.2), 0 0 4px 0 rgba(0,0,0,0.14), 0 4px 8px 0 rgba(0,0,0,0.12)",
