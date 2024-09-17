@@ -116,9 +116,10 @@ export default function UserProfileUpdateForm({
         display: "flex",
         flexDirection: "column",
         gap: "10px",
-        maxWidth: "400px",
+        maxWidth:{xs:"280px",sm:'350px',md:'400px'},
         margin: "0 auto",
         width: "auto",
+        height:'auto'
       }}
     >
       <TextField

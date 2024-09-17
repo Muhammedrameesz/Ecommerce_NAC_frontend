@@ -271,7 +271,7 @@ export default function ProductDetails() {
         <Stack>
           <Grid container spacing={3}>
             {data.map((item, index) => (
-              <Grid item xs={12} sm={6} md={4} lg={2.4} key={index}>
+              <Grid item xs={6} sm={6} md={4} lg={2.4} key={index}>
                 <Link
                   style={{ textDecoration: "none" }}
                   to={`/product/${item._id}`}

@@ -141,7 +141,7 @@ export default function KeepMountedModal({
               display: "flex",
               justifyContent: "flex-end",
               alignItems: "center",
-              width: "100%",
+              width:{xs:'50%',md:'100%'},
             }}
           >
             <CustomTooltip title='close'>
