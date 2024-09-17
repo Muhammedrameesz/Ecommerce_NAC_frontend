@@ -2,20 +2,15 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import useInstructerAuthStore from "../../store/InstructerAuthStore";
 import LockIcon from "@mui/icons-material/Lock";
 import LoadingSpinner from "../../UI/loadinSpinner.jsx";
-import AuthSvg from "../../image/auth protect.svg";  // Import the SVG
+import AuthSvg from "../../image/auth protect.svg"; 
 
 export default function InstructerLogin() {
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit, reset, formState: { errors } } = useForm();
   const navigate = useNavigate();
   const { instructer } = useInstructerAuthStore();
   const [loading, setLoading] = useState(false);
@@ -23,11 +18,7 @@ export default function InstructerLogin() {
   const ondata = async (data) => {
     setLoading(true);
     try {
-      const result = await axios.post(
-        "https://ecommerce-nac-backend.onrender.com/instructer/login",
-        data
-      );
-      console.log(result.data);
+      const result = await axios.post("http://localhost:5000/instructer/login", data);
       const tokens = result.data.tokens;
       if (tokens) {
         setTimeout(async () => {
@@ -47,8 +38,7 @@ export default function InstructerLogin() {
     } catch (error) {
       console.error("Error during login:", error);
       toast.error("An error occurred during login");
-      setLoading(false);
-
+      reset();
     }
   };
 
@@ -62,41 +52,28 @@ export default function InstructerLogin() {
       <section>
         <form id="signUpForm" onSubmit={handleSubmit(ondata)}>
           <Box
-            width={{ xs: "90%", md: "70%" }}  
+            width={{ xs: "90%", md: "70%" }}
             mt={5}
-            ml={{ xs: "5%", md: "15%" }}  
+            ml={{ xs: "5%", md: "15%" }}
             sx={{
               background: "linear-gradient(.25turn, #0F3443, #5adfa8)",
-
               borderRadius: "10px",
               boxShadow:
                 "0 0 10px 0 rgba(0,0,0,0.2), 0 0 4px 0 rgba(0,0,0,0.14), 0 4px 8px 0 rgba(0,0,0,0.12)",
               overflow: "hidden",
             }}
           >
-            
             <Stack
               direction={{ xs: "column", md: "row" }} 
               spacing={2}
               alignItems="center"
               justifyContent="space-around"
             >
-              <Box
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                flex={1}  
-                p={3}
-              >
-                <img src={AuthSvg} alt="Authentication Illustration" width="100%" />
-              </Box>
-
-              {/* Form elements */}
               <Stack
                 direction={"column"}
-                maxWidth={{ xs: "90%", md: "50%" }}  
+                maxWidth={{ xs: "90%", md: "50%" }}
                 spacing={2}
-                flex={1}  
+                flex={1}
                 px={3}
                 py={4}
               >
@@ -113,44 +90,46 @@ export default function InstructerLogin() {
                       fontSize: "18px",
                     }}
                   />
-                  Instructer-Login
+                  Instructor Login
                 </Typography>
 
                 <TextField
+                  fullWidth 
                   id="outlined-basic"
-                  label="email"
+                  label="Email"
                   variant="outlined"
                   {...register("email", {
                     required: true,
                     maxLength: 30,
                     pattern: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
                   })}
+                  error={Boolean(errors.email)}
+                  helperText={
+                    errors.email && errors.email.type === "pattern" && "Invalid email format"
+                  }
                 />
 
                 {errors.email && errors.email.type === "required" && (
-                  <span style={style}>This column is required.....</span>
-                )}
-                {errors.email && errors.email.type === "pattern" && (
-                  <span style={style} className="errorMsg">
-                    Email is not valid.
-                  </span>
+                  <span style={style}>This field is required</span>
                 )}
 
                 <TextField
+                  fullWidth
                   id="outlined-basic"
-                  label="password"
+                  label="Password"
                   variant="outlined"
+                  type="password"
                   {...register("password", { required: true, minLength: 6 })}
+                  error={Boolean(errors.password)}
+                  helperText={
+                    errors.password && errors.password.type === "minLength" && "Password must be at least 6 characters"
+                  }
                 />
 
                 {errors.password && errors.password.type === "required" && (
-                  <span style={style}>This column is required.....</span>
+                  <span style={style}>This field is required</span>
                 )}
-                {errors.password && errors.password.type === "minLength" && (
-                  <span style={style} className="errorMsg">
-                    Password should be at-least 6 characters.
-                  </span>
-                )}
+
                 <Button
                   type="submit"
                   variant="outlined"
@@ -166,9 +145,8 @@ export default function InstructerLogin() {
                     "&:hover": {
                       backgroundColor: "black",
                       color: "#b4b4b4",
-                      border:'none'
+                      border: "none",
                     },
-                    
                   }}
                 >
                   {loading ? <LoadingSpinner /> : "Submit"}
@@ -178,27 +156,19 @@ export default function InstructerLogin() {
                   textAlign={"center"}
                   sx={{ color: "#a3081c", fontWeight: "bold", fontSize: "13px" }}
                 >
-                  Only Instructer Can Access This..
+                  Only instructors can access this.
                 </Typography>
-
-                {/* <div style={{ color: "black",display:'flex',justifyContent:'center',alignItems:'center' ,fontFamily:'helvicta'}}>
-                  <div style={{ marginBottom: "10px"   }}>
-                    Back to signup?
-                    <Link to={"/"}>
-                      <b
-                        style={{
-                          marginLeft: "10px",
-                          cursor: "pointer",
-                          textDecoration: "underline",
-                          color:'#0c0c0c'
-                        }}
-                      >
-                        Signup
-                      </b>
-                    </Link>
-                  </div>
-                </div> */}
               </Stack>
+
+              <Box
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                flex={1}
+                p={3}
+              >
+                <img src={AuthSvg} alt="Authentication Illustration" width="100%" />
+              </Box>
             </Stack>
           </Box>
         </form>

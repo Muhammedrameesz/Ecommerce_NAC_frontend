@@ -275,7 +275,7 @@ export default function Contact() {
               spacing={{xs:5,md:10}}
               sx={{
                 backgroundColor: "#000000cc", 
-                padding: "20px",
+                padding:{xs:'6px',md:'20px'},
                 borderRadius: "10px",
               }}
               width={'100%'}
