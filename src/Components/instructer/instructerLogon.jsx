@@ -55,13 +55,7 @@ export default function InstructerLogin() {
             width={{ xs: "90%", md: "70%" }}
             mt={5}
             ml={{ xs: "5%", md: "15%" }}
-            sx={{
-              background: "linear-gradient(.25turn, #0F3443, #5adfa8)",
-              borderRadius: "10px",
-              boxShadow:
-                "0 0 10px 0 rgba(0,0,0,0.2), 0 0 4px 0 rgba(0,0,0,0.14), 0 4px 8px 0 rgba(0,0,0,0.12)",
-              overflow: "hidden",
-            }}
+           
           >
             <Stack
               direction={{ xs: "column", md: "row" }} 
@@ -71,11 +65,18 @@ export default function InstructerLogin() {
             >
               <Stack
                 direction={"column"}
-                maxWidth={{ xs: "90%", md: "50%" }}
+                maxWidth={{ xs: "100%", md: "50%" }}
                 spacing={2}
                 flex={1}
                 px={3}
                 py={4}
+                sx={{
+                  background: "linear-gradient(.25turn, #0F3443, #5adfa8)",
+                  borderRadius: "10px",
+                  boxShadow:
+                    "0 0 10px 0 rgba(0,0,0,0.2), 0 0 4px 0 rgba(0,0,0,0.14), 0 4px 8px 0 rgba(0,0,0,0.12)",
+                  overflow: "hidden",
+                }}
               >
                 <Typography
                   variant="h5"
