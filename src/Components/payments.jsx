@@ -66,7 +66,7 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
+  width:{xs:300,md:350,lg:400},
   bgcolor: "#202020",
   border: "2px solid #000",
   boxShadow: 24,
