@@ -50,6 +50,7 @@ export default function CardsComponent() {
               alignItems:'center',
               justifyContent:'space-around',
               mb:{xs:5,md:0},
+              mr:{xs:4,md:1}
             }}>
               <Box
                 sx={{

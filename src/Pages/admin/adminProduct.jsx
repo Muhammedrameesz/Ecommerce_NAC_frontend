@@ -17,6 +17,7 @@ import Loading from "../../UI/loading.jsx";
 import ProductHook from "../../customHooks/productHook";
 import SearchBar from "../../UI/searchbarTwo.jsx";
 
+
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     color: "#c4c4c4",

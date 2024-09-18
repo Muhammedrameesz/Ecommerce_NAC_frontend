@@ -3,9 +3,11 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import { Box, Button, Stack, TextField, Typography } from "@mui/material";
+import { Box, Button, Stack, TextField, Typography, IconButton, InputAdornment } from "@mui/material";
 import useInstructerAuthStore from "../../store/InstructerAuthStore";
 import LockIcon from "@mui/icons-material/Lock";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import LoadingSpinner from "../../UI/loadinSpinner.jsx";
 import AuthSvg from "../../image/auth protect.svg";
 
@@ -14,6 +16,7 @@ export default function InstructerLogin() {
   const navigate = useNavigate();
   const { instructer } = useInstructerAuthStore();
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const ondata = async (data) => {
     setLoading(true);
@@ -42,6 +45,8 @@ export default function InstructerLogin() {
     }
   };
 
+  const handleClickShowPassword = () => setShowPassword(!showPassword);
+
   const style = {
     color: "#ec2805",
     marginLeft: 10,
@@ -49,12 +54,12 @@ export default function InstructerLogin() {
 
   return (
     <>
-      <Box >
+      <Box>
         <form id="signUpForm" onSubmit={handleSubmit(ondata)}>
           <Box
               width={{ xs: "80%", sm: "80%", md: "80%" }}  
-              mt={{xs:4,md:3,lg:3}}
-              ml={{ xs: "10%", sm: "8%", md: "7%" }}  
+              mt={{ xs: 4, md: 3, lg: 3 }}
+              ml={{ xs: "10%", sm: "8%", md: "7%" }}  // Increase margin-left for xs and sm screens
               mr={{ xs: "5%", sm: "0", md: "2%" }}
           >
             <Stack
@@ -65,7 +70,7 @@ export default function InstructerLogin() {
             >
               <Stack
                 direction={"column"}
-                width={{ xs: "100%", sm: "80%", md: "50%" }} 
+                width={{ xs: "100%", sm: "80%", md: "50%" }} // Set responsive width
                 spacing={2}
                 flex={1}
                 px={3}
@@ -119,12 +124,24 @@ export default function InstructerLogin() {
                   id="outlined-basic"
                   label="Password"
                   variant="outlined"
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   {...register("password", { required: true, minLength: 6 })}
                   error={Boolean(errors.password)}
                   helperText={
                     errors.password && errors.password.type === "minLength" && "Password must be at least 6 characters"
                   }
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          onClick={handleClickShowPassword}
+                          edge="end"
+                        >
+                          {showPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
                 />
 
                 {errors.password && errors.password.type === "required" && (

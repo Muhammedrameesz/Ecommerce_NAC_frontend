@@ -134,7 +134,7 @@ export default function SampleApiHandler() {
         >
           <Box
             width={"100%"}
-            maxWidth={{ xs: "95%", md: "90%" }}
+            maxWidth={{ xs: "92%", md: "90%" }}
             // mx="auto"
             // px={2}
           >

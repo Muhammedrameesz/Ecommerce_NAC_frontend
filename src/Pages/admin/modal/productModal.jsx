@@ -18,15 +18,16 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useState } from "react";
-import LoadingSpinner from "../../../UI/loadinSpinner.jsx"
+import LoadingSpinner from "../../../UI/loadinSpinner.jsx";
+import Close from "../../../image/Close_Icon_Dark-512.webp";
 
 const style = {
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400, // Decreased width
-  bgcolor: "#141414", // White background
+  width:{xs:300,sm:350,md:400}, 
+  bgcolor: "#141414",
   color: "#fff",
   border: "2px solid #000",
   boxShadow: 24,
@@ -116,7 +117,7 @@ export default function BasicModal({ item, onProductUpdate }) {
     formData.append("price", data.price);
     formData.append("category", data.category);
     formData.append("description", data.description);
-    formData.append("productQuantity",data.productQuantity)
+    formData.append("productQuantity", data.productQuantity);
     if (data.image && data.image[0]) {
       formData.append("image", data.image[0]);
     }
@@ -160,6 +161,23 @@ export default function BasicModal({ item, onProductUpdate }) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "flex-end",
+            }}
+          >
+            <img
+              src={Close}
+              alt="close"
+              onClick={handleClose}
+              style={{
+                width: "30px",
+                height: "30px",
+                cursor: "pointer",
+              }}
+            />
+          </div>
           <Typography variant="h6" sx={{ mb: 2, color: "blue" }}>
             Edit Product
           </Typography>
@@ -204,7 +222,7 @@ export default function BasicModal({ item, onProductUpdate }) {
                 <span style={styles}>this is a required column</span>
               )}
               <TextField
-              fullWidth
+                fullWidth
                 sx={textFieldStyle}
                 id="price"
                 label="Price"
