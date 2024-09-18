@@ -39,14 +39,19 @@ export default function InstructerLogin() {
         }, 2000);
       }
     } catch (error) {
-      setTimeout(()=>{
+      setTimeout(() => {
         console.error("Error during login:", error);
-        toast.error("An error occurred during login");
+        if (error.response && error.response.data && error.response.data.message) {
+          toast.error(error.response.data.message);
+        } else {
+          toast.error("An error occurred during login");
+        }
+  
         setLoading(false);
-      },2000)
-      
+      }, 2000);
     }
   };
+  
 
   const handleClickShowPassword = () => setShowPassword(!showPassword);
 
