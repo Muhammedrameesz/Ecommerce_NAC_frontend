@@ -104,7 +104,7 @@ export default function Signup() {
         direction={{ xs: "column", md: "row" }}
         alignItems="center"
         // justifyContent="center"
-        sx={{ height: "100%", minHeight: "100vh", px: 2,{ xs: 10, md: 5 } }}
+        sx={{ height: "100%", minHeight: "100vh", px: 2,mb:{ xs: 10, md: 5 } }}
         spacing={{xs:4,md:15}}
       >
         <Box
