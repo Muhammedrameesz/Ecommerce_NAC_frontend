@@ -104,7 +104,7 @@ export default function Signup() {
         direction={{ xs: "column", md: "row" }}
         alignItems="center"
         // justifyContent="center"
-        sx={{ height: "100%", minHeight: "100vh", px: 2 }}
+        sx={{ height: "100%", minHeight: "100vh", px: 2,{ xs: 10, md: 5 } }}
         spacing={{xs:4,md:15}}
       >
         <Box
@@ -123,7 +123,7 @@ export default function Signup() {
           id="signupForm"
           onSubmit={handleSubmit(onsave)}
           sx={{
-            width: { xs: "100%", sm: "80%", md: "50%", lg: "35%" },
+            width: { xs: "90%", sm: "80%", md: "50%", lg: "35%" },
             padding: { xs: "10px", sm: "30px", md: "35px" },
             background: "linear-gradient(.25turn, #0F3443, #34E89E)",
             borderRadius: "10px",
